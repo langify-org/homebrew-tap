@@ -12,19 +12,17 @@ class Ws < Formula
       sha256 "f0e1aec792e5ae1fc6189483c00b7a8c0275b12cbf100435988d2cefdab3d644"
     end
   end
-  if OS.linux?
-    if Hardware::CPU.intel?
+  if OS.linux? && Hardware::CPU.intel?
       url "https://github.com/langify-org/ws-cli/releases/download/v0.2.0/ws-x86_64-unknown-linux-gnu.tar.xz"
       sha256 "89dc124fc3a0bd2ce1260353b762d76e2b340638746949f8f02d9fdf65417d67"
-    end
   end
   license "MIT"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
-    "x86_64-apple-darwin": {},
-    "x86_64-unknown-linux-gnu": {}
-  }
+    "aarch64-apple-darwin":     {},
+    "x86_64-apple-darwin":      {},
+    "x86_64-unknown-linux-gnu": {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -42,15 +40,9 @@ class Ws < Formula
   end
 
   def install
-    if OS.mac? && Hardware::CPU.arm?
-      bin.install "ws"
-    end
-    if OS.mac? && Hardware::CPU.intel?
-      bin.install "ws"
-    end
-    if OS.linux? && Hardware::CPU.intel?
-      bin.install "ws"
-    end
+    bin.install "ws" if OS.mac? && Hardware::CPU.arm?
+    bin.install "ws" if OS.mac? && Hardware::CPU.intel?
+    bin.install "ws" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
