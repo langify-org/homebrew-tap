@@ -5,16 +5,16 @@ class Ws < Formula
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/langify-org/ws-cli/releases/download/v0.9.0/ws-aarch64-apple-darwin.tar.xz"
-      sha256 "1c258f04ea101f1ace690f1c267e0dfbb84da9c4ecd7746d57e8447c7b482fc9"
+      sha256 "b6aabf52f5e14e34548fc97c5efb40cb8b69c733a7b976e100cc2cc7c082244f"
     end
     if Hardware::CPU.intel?
       url "https://github.com/langify-org/ws-cli/releases/download/v0.9.0/ws-x86_64-apple-darwin.tar.xz"
-      sha256 "c15404d867f2a4e7a3b1f3a9af876f7e6c0ceaffaaf8804178ede79a17ee56fc"
+      sha256 "60dbd5e709571c27d9b4450602cb26ca0e64e177c2bab5658feaaaf3d83de1cf"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
       url "https://github.com/langify-org/ws-cli/releases/download/v0.9.0/ws-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "4eabf14d231a572755cb0f28c06029e7464adce61d3f600e0ada858b3eb3d652"
+      sha256 "4e5f7e42eb80c84e74a9c086e07b5fc838c3b1d1fa75a9d53073f94158f89249"
   end
   license "MIT"
 
