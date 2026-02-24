@@ -1,20 +1,20 @@
 class Ws < Formula
   desc "A CLI tool for git bare clone + worktree workflow"
   homepage "https://langify-org.github.io/ws-cli/"
-  version "0.9.0"
+  version "0.10.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/langify-org/ws-cli/releases/download/v0.9.0/ws-aarch64-apple-darwin.tar.xz"
-      sha256 "b6aabf52f5e14e34548fc97c5efb40cb8b69c733a7b976e100cc2cc7c082244f"
+      url "https://github.com/langify-org/ws-cli/releases/download/v0.10.0/ws-aarch64-apple-darwin.tar.xz"
+      sha256 "4d2aa005f0689bdb11b8af7367efaacc5cee7be16d504a8a60b9d5e564048086"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/langify-org/ws-cli/releases/download/v0.9.0/ws-x86_64-apple-darwin.tar.xz"
-      sha256 "60dbd5e709571c27d9b4450602cb26ca0e64e177c2bab5658feaaaf3d83de1cf"
+      url "https://github.com/langify-org/ws-cli/releases/download/v0.10.0/ws-x86_64-apple-darwin.tar.xz"
+      sha256 "8540d52d5aaf83c2571d35f764e9d9e5a4298559810bb4a64fba4e9754b60cf1"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-      url "https://github.com/langify-org/ws-cli/releases/download/v0.9.0/ws-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "4e5f7e42eb80c84e74a9c086e07b5fc838c3b1d1fa75a9d53073f94158f89249"
+      url "https://github.com/langify-org/ws-cli/releases/download/v0.10.0/ws-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "02e4b689ff2eee770696b2642d3c9e5578bd558c161d7409af81d2cf62ee7b31"
   end
   license "MIT"
 
